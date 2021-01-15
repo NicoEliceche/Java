@@ -1,0 +1,133 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #808080;}
+.s3 { color: #6897bb;}
+.s4 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.company</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.util.Scanner</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">Main {</span>
+
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+        <span class="s2">//Exercise 1:</span>
+        <span class="s1">Scanner pocion = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">grs</span><span class="s0">;</span>
+        <span class="s1">grs = pocion.nextInt()</span><span class="s0">;</span>
+
+        <span class="s0">if </span><span class="s1">(grs &gt;= </span><span class="s3">100</span><span class="s1">) {</span>
+            <span class="s1">System.out.println(</span><span class="s4">&quot;¡Felicidades, es una buena poción!&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+            <span class="s1">System.out.println(</span><span class="s4">&quot;La poción es mediocre, sangre sucia inmunda&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+
+        <span class="s2">//Exercise 2:</span>
+        <span class="s1">Scanner Uber = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+        <span class="s0">float </span><span class="s1">distance = Uber.nextFloat()</span><span class="s0">;</span>
+
+        <span class="s1">Scanner availableDriver = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+        <span class="s0">boolean </span><span class="s1">available = availableDriver.nextBoolean()</span><span class="s0">;</span>
+
+        <span class="s0">if </span><span class="s1">(distance &lt;= </span><span class="s3">0.5 </span><span class="s1">&amp;&amp; available == </span><span class="s0">true</span><span class="s1">) {</span>
+            <span class="s1">System.out.println(</span><span class="s4">&quot;Listo para iniciar recorrido&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(distance &lt;= </span><span class="s3">0.5 </span><span class="s1">&amp;&amp; available == </span><span class="s0">false</span><span class="s1">) {</span>
+            <span class="s1">System.out.println(</span><span class="s4">&quot;Conductor cercano, pero no disponible&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(distance &gt; </span><span class="s3">0.5 </span><span class="s1">&amp;&amp; available == </span><span class="s0">true</span><span class="s1">) {</span>
+            <span class="s1">System.out.println(</span><span class="s4">&quot;Conductor disponible pero muy lejos, aplicarán tarifas más altas&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(distance &gt; </span><span class="s3">0.5 </span><span class="s1">&amp;&amp; available == </span><span class="s0">false</span><span class="s1">) {</span>
+            <span class="s1">System.out.println(</span><span class="s4">&quot;No hay conductores disponibles&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+
+        <span class="s2">//Exercise 3:</span>
+        <span class="s0">int</span><span class="s1">[] sumaNumeros = </span><span class="s0">new int</span><span class="s1">[]{</span><span class="s3">1</span><span class="s0">, </span><span class="s3">2</span><span class="s0">, </span><span class="s3">3</span><span class="s0">, </span><span class="s3">4</span><span class="s0">, </span><span class="s3">5</span><span class="s1">}</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">n = sumaNumeros.length</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">suma = </span><span class="s3">0</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">i</span><span class="s0">;</span>
+
+        <span class="s0">for </span><span class="s1">(i = </span><span class="s3">0</span><span class="s0">; </span><span class="s1">i &lt; n</span><span class="s0">; </span><span class="s1">i++) {</span>
+            <span class="s1">suma += sumaNumeros[i]</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s1">System.out.println(</span><span class="s4">&quot;For: &quot; </span><span class="s1">+ suma)</span><span class="s0">;</span>
+
+        <span class="s0">while </span><span class="s1">(i &lt; n) {</span>
+            <span class="s1">suma += sumaNumeros[i]</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s1">System.out.println(</span><span class="s4">&quot;While: &quot; </span><span class="s1">+ suma)</span><span class="s0">;</span>
+
+        <span class="s2">//Exercise 4:</span>
+        <span class="s1">Scanner scanner = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+
+        <span class="s1">System.out.println(</span><span class="s4">&quot;Cómo es el clima de hoy?&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">clima = scanner.nextInt()</span><span class="s0">;</span>
+
+        <span class="s0">switch </span><span class="s1">(clima) {</span>
+            <span class="s0">case </span><span class="s3">1</span><span class="s1">:</span>
+                <span class="s1">System.out.println(</span><span class="s4">&quot;El clima es soleado&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s0">break;</span>
+            <span class="s0">case </span><span class="s3">2</span><span class="s1">:</span>
+                <span class="s1">System.out.println(</span><span class="s4">&quot;El clima es nublado&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s0">break;</span>
+            <span class="s0">case </span><span class="s3">3</span><span class="s1">:</span>
+                <span class="s1">System.out.println(</span><span class="s4">&quot;El clima es lluvioso&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s0">break;</span>
+            <span class="s0">case </span><span class="s3">4</span><span class="s1">:</span>
+                <span class="s1">System.out.println(</span><span class="s4">&quot;El clima es tormentoso&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s0">break;</span>
+            <span class="s0">case </span><span class="s3">5</span><span class="s1">:</span>
+                <span class="s1">System.out.println(</span><span class="s4">&quot;El clima es nevado&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s0">break;</span>
+            <span class="s0">default</span><span class="s1">:</span>
+                <span class="s1">System.out.println(</span><span class="s4">&quot;Pregúntale a Google&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+
+        <span class="s2">//Exercise 5:</span>
+        <span class="s1">String[] moviesTitles = </span><span class="s0">new </span><span class="s1">String[]{</span><span class="s4">&quot;Jumanji&quot;</span><span class="s0">, </span><span class="s4">&quot;Toy Story&quot;</span><span class="s0">, </span><span class="s4">&quot;Pulp Fiction&quot;</span><span class="s0">, </span><span class="s4">&quot;Batman: El caballero de la noche&quot;</span><span class="s0">, </span><span class="s4">&quot;Kill Bill&quot;</span><span class="s1">}</span><span class="s0">;</span>
+
+        <span class="s0">int </span><span class="s1">j = </span><span class="s3">0</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">masLargo = </span><span class="s3">0</span><span class="s0">;</span>
+        <span class="s1">String tituloMasLargo = </span><span class="s4">&quot;&quot;</span><span class="s0">;</span>
+        <span class="s0">for </span><span class="s1">(String title : moviesTitles) {</span>
+            <span class="s0">int </span><span class="s1">largoTitulo = title.length()</span><span class="s0">;</span>
+            <span class="s0">if </span><span class="s1">(largoTitulo &gt; masLargo) {</span>
+                <span class="s1">masLargo = largoTitulo</span><span class="s0">;</span>
+                <span class="s1">tituloMasLargo = title</span><span class="s0">;</span>
+                <span class="s1">j++</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+        <span class="s1">System.out.println(tituloMasLargo)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s4">&quot;El índice del título más largo es: &quot; </span><span class="s1">+ j)</span><span class="s0">;</span>
+
+        <span class="s2">//Exercise 6:</span>
+        <span class="s1">System.out.println(</span><span class="s4">&quot;Ingresa un número para obtener sus pares&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s1">Scanner numero = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">numeroIngresado = scanner.nextInt()</span><span class="s0">;</span>
+
+        <span class="s0">if </span><span class="s1">(numeroIngresado &lt;= </span><span class="s3">0</span><span class="s1">) {</span>
+            <span class="s1">System.out.println(</span><span class="s4">&quot;Ingresa un número positivo&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">}   </span><span class="s0">else </span><span class="s1">{</span>
+            <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">h = </span><span class="s3">1</span><span class="s0">; </span><span class="s1">h &lt;= numeroIngresado</span><span class="s0">; </span><span class="s1">h++) {</span>
+                <span class="s0">if </span><span class="s1">(h % </span><span class="s3">2 </span><span class="s1">== </span><span class="s3">0</span><span class="s1">) {</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Números pares de &quot; </span><span class="s1">+ numeroIngresado + </span><span class="s4">&quot;: &quot; </span><span class="s1">+ h)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+            <span class="s1">}</span>
+
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

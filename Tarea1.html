@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #808080;}
+.s3 { color: #6897bb;}
+.s4 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.company</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">Main {</span>
+
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+    <span class="s2">// Exercise 1:</span>
+
+    <span class="s0">int </span><span class="s1">largoCubo = </span><span class="s3">15</span><span class="s0">;</span>
+    <span class="s0">int </span><span class="s1">anchoCubo = </span><span class="s3">23</span><span class="s0">;</span>
+    <span class="s0">int </span><span class="s1">altoCubo = </span><span class="s3">12</span><span class="s0">;</span>
+    <span class="s0">int </span><span class="s1">volumenCubo = largoCubo * anchoCubo * altoCubo</span><span class="s0">;</span>
+
+    <span class="s1">System.out.println(String.format(</span><span class="s4">&quot;1) El volumen del cubo es: %d&quot;</span><span class="s0">, </span><span class="s1">volumenCubo))</span><span class="s0">;</span>
+
+    <span class="s2">// Exercise 2:</span>
+
+    <span class="s0">int </span><span class="s1">masa = </span><span class="s3">12</span><span class="s0">;</span>
+    <span class="s0">int </span><span class="s1">velocidad = </span><span class="s3">3</span><span class="s0">;</span>
+
+    <span class="s0">double </span><span class="s1">Ec = (</span><span class="s3">0.5 </span><span class="s1">* masa * Math.pow(velocidad</span><span class="s0">, </span><span class="s3">2</span><span class="s1">))</span><span class="s0">;</span>
+    <span class="s1">System.out.println(String.format(</span><span class="s4">&quot;2) Energía cinética obtenida: %.2f&quot;</span><span class="s0">, </span><span class="s1">Ec))</span><span class="s0">;</span>
+
+    <span class="s2">// Exercise 3:</span>
+    <span class="s1">String R = </span><span class="s4">&quot;r&quot;</span><span class="s0">;</span>
+    <span class="s0">long </span><span class="s1">numbers = </span><span class="s3">1495970192837664L</span><span class="s0">;</span>
+    <span class="s0">double </span><span class="s1">decimal = </span><span class="s3">12.5</span><span class="s0">;</span>
+    <span class="s0">boolean </span><span class="s1">isWhat = </span><span class="s0">true;</span>
+    <span class="s0">int </span><span class="s1">number = </span><span class="s3">90</span><span class="s0">;</span>
+    <span class="s1">String frase = </span><span class="s4">&quot;No tengo trono ni reina, ni nadie que me comprenda, pero sigo siendo el rey&quot;</span><span class="s0">;</span>
+    <span class="s0">double </span><span class="s1">longDecimal = </span><span class="s3">6.626070040</span><span class="s0">;</span>
+    <span class="s1">System.out.println(</span><span class="s4">&quot;3) a) char/String; b) long; c) float/double; d) boolean; e) int; f) String; g) double.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+    <span class="s2">// Exercise 4:</span>
+
+    <span class="s0">float </span><span class="s1">sixtyClicks = (</span><span class="s0">float</span><span class="s1">) </span><span class="s3">0.30 </span><span class="s1">* </span><span class="s3">60</span><span class="s0">;</span>
+    <span class="s0">float </span><span class="s1">aHundredClicks = (</span><span class="s0">float</span><span class="s1">) </span><span class="s3">0.25 </span><span class="s1">* </span><span class="s3">100</span><span class="s0">;</span>
+    <span class="s0">float </span><span class="s1">twentyClicks = (</span><span class="s0">float</span><span class="s1">) </span><span class="s3">0.80 </span><span class="s1">* </span><span class="s3">20</span><span class="s0">;</span>
+
+    <span class="s0">double </span><span class="s1">CPCprom = ((sixtyClicks + aHundredClicks + twentyClicks) / </span><span class="s3">3</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s0">double </span><span class="s1">CPCpromIVA = CPCprom * </span><span class="s3">16 </span><span class="s1">/ </span><span class="s3">100</span><span class="s0">;</span>
+    <span class="s0">double </span><span class="s1">CPCpromFinal = CPCpromIVA + CPCprom</span><span class="s0">;</span>
+
+    <span class="s1">System.out.println(String.format(</span><span class="s4">&quot;4) Costo promedio por clicks: $%.2f&quot;</span><span class="s0">, </span><span class="s1">CPCpromFinal))</span><span class="s0">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
