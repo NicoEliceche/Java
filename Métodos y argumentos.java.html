@@ -17,14 +17,20 @@ Main.java</font>
 </center></td></tr></table>
 <pre><span class="s0">package </span><span class="s1">com.company</span><span class="s0">;</span>
 
+<span class="s0">import </span><span class="s1">java.util.Random</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.Scanner</span><span class="s0">;</span>
+
 <span class="s0">public class </span><span class="s1">Main {</span>
 
     <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
-       <span class="s1">String[] titleArray = </span><span class="s0">new </span><span class="s1">String[] {</span><span class="s2">&quot;La naranja mecánica&quot;</span><span class="s0">, </span><span class="s2">&quot;Buscando a Nemo&quot;</span><span class="s0">, </span><span class="s2">&quot;Misión Imposible&quot;</span><span class="s0">, </span><span class="s2">&quot;Star Wars&quot;</span><span class="s0">, </span><span class="s2">&quot;Troya&quot;</span><span class="s0">, </span><span class="s2">&quot;Yo Robot&quot;</span><span class="s0">, </span><span class="s2">&quot;Ip Man&quot;</span><span class="s1">}</span><span class="s0">;</span>
+        <span class="s1">String[] titleArray = </span><span class="s0">new </span><span class="s1">String[] {</span><span class="s2">&quot;La naranja mecánica&quot;</span><span class="s0">, </span><span class="s2">&quot;Buscando a Nemo&quot;</span><span class="s0">, </span><span class="s2">&quot;Misión Imposible&quot;</span><span class="s0">, </span><span class="s2">&quot;Star Wars&quot;</span><span class="s0">, </span><span class="s2">&quot;Troya&quot;</span><span class="s0">, </span><span class="s2">&quot;Yo Robot&quot;</span><span class="s0">, </span><span class="s2">&quot;Ip Man&quot;</span><span class="s1">}</span><span class="s0">;</span>
 
-       <span class="s1">String title = play(titleArray</span><span class="s0">, </span><span class="s3">3</span><span class="s1">)</span><span class="s0">;</span>
-       <span class="s1">System.out.println()</span><span class="s0">;</span>
-       <span class="s1">pause(title)</span><span class="s0">;</span>
+        <span class="s1">String title = play(titleArray</span><span class="s0">, </span><span class="s3">3</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">String title2 = play(titleArray)</span><span class="s0">;</span>
+        <span class="s1">System.out.println()</span><span class="s0">;</span>
+        <span class="s1">pause(title)</span><span class="s0">;</span>
+        <span class="s1">System.out.println()</span><span class="s0">;</span>
+        <span class="s1">pause(title2)</span><span class="s0">;  </span>
     <span class="s1">}</span>
 
     <span class="s0">public static </span><span class="s1">String play(String[] listaDePeliculas</span><span class="s0">, int </span><span class="s1">index){</span>
@@ -41,6 +47,19 @@ Main.java</font>
 
             <span class="s0">return </span><span class="s2">&quot;&quot;</span><span class="s0">;</span>
         <span class="s1">}</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public static </span><span class="s1">String play(String[] listaDePeliculas){</span>
+        <span class="s1">Random random = </span><span class="s0">new </span><span class="s1">Random()</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">index = random.nextInt(listaDePeliculas.length -</span><span class="s3">1</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s1">String title = listaDePeliculas[index]</span><span class="s0">;</span>
+
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s3">0</span><span class="s0">; </span><span class="s1">i &lt; </span><span class="s3">10</span><span class="s0">; </span><span class="s1">i++) {</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;Playing movie...&quot; </span><span class="s1">+ title)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+
+        <span class="s0">return </span><span class="s1">title</span><span class="s0">;</span>
     <span class="s1">}</span>
 
     <span class="s0">public static void </span><span class="s1">pause(String title) {</span>
