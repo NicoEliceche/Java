@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>Media.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Media.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.company</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">Media {</span>
+
+    <span class="s0">private </span><span class="s1">String title</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">String genre</span><span class="s0">;</span>
+    <span class="s0">private int </span><span class="s1">duration</span><span class="s0">;</span>
+
+    <span class="s0">public </span><span class="s1">Media(String title</span><span class="s0">, </span><span class="s1">String genre</span><span class="s0">, int </span><span class="s1">duration) {</span>
+        <span class="s0">this</span><span class="s1">.title = title</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.genre = genre</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.duration = duration</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public </span><span class="s1">String getTitle() {</span>
+        <span class="s0">return </span><span class="s1">title</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public void </span><span class="s1">setTitle(String title) {</span>
+        <span class="s0">this</span><span class="s1">.title = title</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public </span><span class="s1">String getGenre() {</span>
+        <span class="s0">return </span><span class="s1">genre</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public void </span><span class="s1">setGenre(String genre) {</span>
+        <span class="s0">this</span><span class="s1">.genre = genre</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public int </span><span class="s1">getDuration() {</span>
+        <span class="s0">return </span><span class="s1">duration</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public void </span><span class="s1">setDuration(</span><span class="s0">int </span><span class="s1">duration) {</span>
+        <span class="s0">this</span><span class="s1">.duration = duration</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public void </span><span class="s1">play() {</span>
+        <span class="s1">printSomething(</span><span class="s2">&quot;Playing &quot; </span><span class="s1">+ title)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public void </span><span class="s1">pause() {</span>
+        <span class="s1">printSomething(</span><span class="s2">&quot;Pausing &quot; </span><span class="s1">+ title)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">private void </span><span class="s1">printSomething(String something) {</span>
+        <span class="s1">System.out.println(something)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public void </span><span class="s1">moveForward(</span><span class="s0">int </span><span class="s1">minutes) {</span>
+        <span class="s1">printSomething(</span><span class="s2">&quot;Moving forward &quot; </span><span class="s1">+ minutes + </span><span class="s2">&quot; minutes&quot;</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public </span><span class="s1">String toString() {</span>
+        <span class="s0">return </span><span class="s2">&quot;Media title is: &quot; </span><span class="s1">+ title</span><span class="s0">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span></pre>
+</body>
+</html>
