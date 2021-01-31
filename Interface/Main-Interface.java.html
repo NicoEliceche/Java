@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.company</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.util.Random</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.Scanner</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">Main {</span>
+
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+        <span class="s1">Movie backToTheFuture = </span><span class="s0">new </span><span class="s1">Movie(</span><span class="s2">&quot;Back to the future&quot;</span><span class="s0">, </span><span class="s2">&quot;Science fiction&quot;</span><span class="s0">, </span><span class="s3">120</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">backToTheFuture.setWonOscar(</span><span class="s0">true</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">backToTheFuture.download(</span><span class="s0">new </span><span class="s1">Media.DownloadListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onMediaDownloaded(String content) {</span>
+                <span class="s1">backToTheFuture.play()</span><span class="s0">;</span>
+                <span class="s1">System.out.println(content)</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+
+        <span class="s1">Series breakingBad = </span><span class="s0">new </span><span class="s1">Series(</span><span class="s2">&quot;Breaking bad&quot;</span><span class="s0">, </span><span class="s2">&quot;Drama and drugs&quot;</span><span class="s0">, </span><span class="s3">50</span><span class="s0">, </span><span class="s3">12</span><span class="s0">, </span><span class="s3">5</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Series vikings = </span><span class="s0">new </span><span class="s1">Series(</span><span class="s2">&quot;Vikings&quot;</span><span class="s0">, </span><span class="s2">&quot;Action and Adventures&quot;</span><span class="s0">, </span><span class="s3">50</span><span class="s0">, </span><span class="s3">10</span><span class="s0">, </span><span class="s3">6</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Series friends = </span><span class="s0">new </span><span class="s1">Series(</span><span class="s2">&quot;Friends&quot;</span><span class="s0">, </span><span class="s2">&quot;Comedy&quot;</span><span class="s0">, </span><span class="s3">20</span><span class="s0">, </span><span class="s3">22</span><span class="s0">, </span><span class="s3">12</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s1">breakingBad.setSynopsis(</span><span class="s2">&quot;Un profe recluta a un vago y venden dulces azules&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">vikings.setSynopsis(</span><span class="s2">&quot;Un montón de rudos van y buscan pleito a otros países nada más porque sí&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">friends.setSynopsis(</span><span class="s2">&quot;Un grupo de amigos que al parecer no trabajan ni tienen hobbies se juntan a hablar de parejas&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s1">printInstructions()</span><span class="s0">;</span>
+
+        <span class="s1">Scanner scanner = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">selection = scanner.nextInt()</span><span class="s0">;</span>
+
+        <span class="s0">while </span><span class="s1">(selection != </span><span class="s3">0</span><span class="s1">) {</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+            <span class="s0">if </span><span class="s1">(selection == </span><span class="s3">1</span><span class="s1">) {</span>
+                <span class="s1">System.out.println(breakingBad.getSynopsis())</span><span class="s0">;</span>
+            <span class="s1">} </span><span class="s0">else if </span><span class="s1">(selection == </span><span class="s3">2</span><span class="s1">) {</span>
+                <span class="s1">System.out.println(vikings.getSynopsis())</span><span class="s0">;</span>
+            <span class="s1">} </span><span class="s0">else if </span><span class="s1">(selection == </span><span class="s3">3</span><span class="s1">) {</span>
+                <span class="s1">System.out.println(friends.getSynopsis())</span><span class="s0">;</span>
+            <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+                <span class="s1">System.out.println(</span><span class="s2">&quot;Serie inválida, selecciona otra&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">}</span>
+
+            <span class="s1">System.out.println(</span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">printInstructions()</span><span class="s0">;</span>
+            <span class="s1">selection = scanner.nextInt()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Fin&quot;</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">private static void </span><span class="s1">printInstructions() {</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Selecciona una serie para ver su sinopsis&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;1) - Breaking bad&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;2) - Vikings&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;3) - Friends&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;0) - Salir&quot;</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
