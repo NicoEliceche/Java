@@ -1,0 +1,119 @@
+<html>
+<head>
+<title>CineboxPlayer.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #6897bb;}
+.s4 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+CineboxPlayer.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.company</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.lang.reflect.Array</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.*</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">CineboxPlayer </span><span class="s0">implements </span><span class="s1">MediaDownloader.DownloadListener {</span>
+
+    <span class="s0">private </span><span class="s1">Movie backToTheFuture = </span><span class="s0">new </span><span class="s1">Movie(</span><span class="s2">&quot;Back to the future&quot;</span><span class="s0">, </span><span class="s2">&quot;Science fiction&quot;</span><span class="s0">, </span><span class="s3">120</span><span class="s1">)</span><span class="s0">;</span>
+
+    <span class="s0">public void </span><span class="s1">initialize() {</span>
+        <span class="s1">PriorityQueue&lt;String&gt; stringQueue = </span><span class="s0">new </span><span class="s1">PriorityQueue&lt;&gt;()</span><span class="s0">;</span>
+        <span class="s1">stringQueue.add(</span><span class="s2">&quot;Hola&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">stringQueue.add(</span><span class="s2">&quot;Manzana&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">stringQueue.add(</span><span class="s2">&quot;Hugo&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(stringQueue)</span><span class="s0">;</span>
+
+        <span class="s1">String pollString = stringQueue.poll()</span><span class="s0">;</span>
+        <span class="s1">System.out.println(pollString)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(stringQueue)</span><span class="s0">;</span>
+
+        <span class="s4">/*Movie backToTheFuture = new Movie(&quot;Back to the future&quot;, &quot;Science fiction&quot;, 120); 
+        Movie avengers = new Movie(&quot;Avengers&quot;, &quot;Action&quot;, 150); 
+        Movie forrestGump = new Movie(&quot;Forrest Gump&quot;, &quot;Drama&quot;, 130); 
+ 
+        backToTheFuture.setSynopsis(&quot;Rick y Morty antes de que existieran en caricatura&quot;); 
+        avengers.setSynopsis(&quot;Superhéroes peleando resolviendo problemas que ellos mismos causaron&quot;); 
+        forrestGump.setSynopsis(&quot;Una gran película, punto.&quot;); 
+ 
+        Series breakingBad = new Series(&quot;Breaking bad&quot;, &quot;Drama and drugs&quot;, 50, 12, 5); 
+        Series vikings = new Series(&quot;Vikings&quot;, &quot;Action and Adventures&quot;, 50, 10, 6); 
+        Series friends = new Series(&quot;Friends&quot;, &quot;Comedy&quot;, 20, 22, 12); 
+        Series dark = new Series(&quot;Dark&quot;, &quot;Drama&quot;, 40, 10, 4); 
+        Series howIMetYourMother = new Series(&quot;How I met your mother&quot;, &quot;Comedy&quot;, 20, 22, 5); 
+        Series caballerosDelZodiaco = new Series(&quot;Caballeros del Zodiaco&quot;, &quot;Anime&quot;, 15, 50, 3); 
+ 
+        breakingBad.setSynopsis(&quot;Un profe recluta a un vago y venden dulces azules&quot;); 
+        vikings.setSynopsis(&quot;Un montón de rudos van y buscan pleito a otros países nada más porque sí&quot;); 
+        friends.setSynopsis(&quot;Un grupo de amigos que al parecer no trabajan ni tienen hobbies se juntan a hablar de parejas&quot;); 
+        dark.setSynopsis(&quot;La verdad no la entendí&quot;); 
+        howIMetYourMother.setSynopsis(&quot;Lo mismo que friends pero con otras personas&quot;); 
+        caballerosDelZodiaco.setSynopsis(&quot;Muchos peleadores explican lo que harán antes de cada golpe&quot;); 
+ 
+        ArrayList&lt;Media&gt; mediaList = new ArrayList&lt;&gt;(); 
+        mediaList.add(backToTheFuture); 
+        mediaList.add(avengers); 
+        mediaList.add(forrestGump); 
+        mediaList.add(breakingBad); 
+        mediaList.add(vikings); 
+        mediaList.add(friends); 
+        mediaList.add(dark); 
+        mediaList.add(howIMetYourMother); 
+        mediaList.add(caballerosDelZodiaco); 
+ 
+        Collections.sort(mediaList); 
+ 
+        printInstructions(mediaList); 
+ 
+        Scanner scanner = new Scanner(System.in); 
+        int selection = scanner.nextInt(); 
+ 
+        while (selection != 0) { 
+            System.out.println(&quot;\n&quot;); 
+ 
+            int mediaListSize = mediaList.size(); 
+            int index = selection -1; 
+ 
+            if (index &gt;= mediaListSize) { 
+                System.out.println(&quot;Serie inválida, selecciona otra.&quot;); 
+            } else { 
+            Media media = mediaList.get(selection - 1); 
+            System.out.println(media.getSynopsis()); 
+            } 
+ 
+            System.out.println(&quot;\n&quot;); 
+            printInstructions(mediaList); 
+            selection = scanner.nextInt(); 
+        } 
+ 
+        System.out.println(&quot;Fin&quot;); */</span>
+    <span class="s1">}</span>
+
+    <span class="s0">private static void </span><span class="s1">printInstructions(ArrayList&lt;Media&gt; mediaList) {</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Selecciona una serie para ver su sinopsis&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s3">0</span><span class="s0">; </span><span class="s1">i &lt; mediaList.size() </span><span class="s0">; </span><span class="s1">i++) {</span>
+            <span class="s1">Media media = mediaList.get(i)</span><span class="s0">;</span>
+            <span class="s0">int </span><span class="s1">index = i + </span><span class="s3">1</span><span class="s0">;</span>
+            <span class="s1">System.out.println(index + </span><span class="s2">&quot;) - &quot; </span><span class="s1">+ media.getTitle())</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;0) - Salir&quot;</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">onMediaDownloaded(Media media</span><span class="s0">, </span><span class="s1">String content) {</span>
+        <span class="s1">media.setContent(content)</span><span class="s0">;</span>
+        <span class="s1">media.play()</span><span class="s0">;</span>
+        <span class="s1">System.out.println(content)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
