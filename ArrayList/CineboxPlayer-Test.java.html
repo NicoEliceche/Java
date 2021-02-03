@@ -1,0 +1,108 @@
+<html>
+<head>
+<title>CineboxPlayer.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+CineboxPlayer.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.company</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.lang.reflect.Array</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.ArrayList</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.Iterator</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.Scanner</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">CineboxPlayer </span><span class="s0">implements </span><span class="s1">MediaDownloader.DownloadListener {</span>
+
+    <span class="s0">private </span><span class="s1">Movie backToTheFuture = </span><span class="s0">new </span><span class="s1">Movie(</span><span class="s2">&quot;Back to the future&quot;</span><span class="s0">, </span><span class="s2">&quot;Science fiction&quot;</span><span class="s0">, </span><span class="s3">120</span><span class="s1">)</span><span class="s0">;</span>
+
+    <span class="s0">public void </span><span class="s1">initialize() {</span>
+        <span class="s1">Movie backToTheFuture = </span><span class="s0">new </span><span class="s1">Movie(</span><span class="s2">&quot;Back to the future&quot;</span><span class="s0">, </span><span class="s2">&quot;Science fiction&quot;</span><span class="s0">, </span><span class="s3">120</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Movie avengers = </span><span class="s0">new </span><span class="s1">Movie(</span><span class="s2">&quot;Avengers&quot;</span><span class="s0">, </span><span class="s2">&quot;Action&quot;</span><span class="s0">, </span><span class="s3">150</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Movie forrestGump = </span><span class="s0">new </span><span class="s1">Movie(</span><span class="s2">&quot;Forrest Gump&quot;</span><span class="s0">, </span><span class="s2">&quot;Drama&quot;</span><span class="s0">, </span><span class="s3">130</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s1">backToTheFuture.setSynopsis(</span><span class="s2">&quot;Rick y Morty antes de que existieran en caricatura&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">avengers.setSynopsis(</span><span class="s2">&quot;Superhéroes peleando resolviendo problemas que ellos mismos causaron&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">forrestGump.setSynopsis(</span><span class="s2">&quot;Una gran película, punto.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s1">Series breakingBad = </span><span class="s0">new </span><span class="s1">Series(</span><span class="s2">&quot;Breaking bad&quot;</span><span class="s0">, </span><span class="s2">&quot;Drama and drugs&quot;</span><span class="s0">, </span><span class="s3">50</span><span class="s0">, </span><span class="s3">12</span><span class="s0">, </span><span class="s3">5</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Series vikings = </span><span class="s0">new </span><span class="s1">Series(</span><span class="s2">&quot;Vikings&quot;</span><span class="s0">, </span><span class="s2">&quot;Action and Adventures&quot;</span><span class="s0">, </span><span class="s3">50</span><span class="s0">, </span><span class="s3">10</span><span class="s0">, </span><span class="s3">6</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Series friends = </span><span class="s0">new </span><span class="s1">Series(</span><span class="s2">&quot;Friends&quot;</span><span class="s0">, </span><span class="s2">&quot;Comedy&quot;</span><span class="s0">, </span><span class="s3">20</span><span class="s0">, </span><span class="s3">22</span><span class="s0">, </span><span class="s3">12</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Series dark = </span><span class="s0">new </span><span class="s1">Series(</span><span class="s2">&quot;Dark&quot;</span><span class="s0">, </span><span class="s2">&quot;Drama&quot;</span><span class="s0">, </span><span class="s3">40</span><span class="s0">, </span><span class="s3">10</span><span class="s0">, </span><span class="s3">4</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Series howIMetYourMother = </span><span class="s0">new </span><span class="s1">Series(</span><span class="s2">&quot;How I met your mother&quot;</span><span class="s0">, </span><span class="s2">&quot;Comedy&quot;</span><span class="s0">, </span><span class="s3">20</span><span class="s0">, </span><span class="s3">22</span><span class="s0">, </span><span class="s3">5</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Series caballerosDelZodiaco = </span><span class="s0">new </span><span class="s1">Series(</span><span class="s2">&quot;Caballeros del Zodiaco&quot;</span><span class="s0">, </span><span class="s2">&quot;Anime&quot;</span><span class="s0">, </span><span class="s3">15</span><span class="s0">, </span><span class="s3">50</span><span class="s0">, </span><span class="s3">3</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s1">breakingBad.setSynopsis(</span><span class="s2">&quot;Un profe recluta a un vago y venden dulces azules&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">vikings.setSynopsis(</span><span class="s2">&quot;Un montón de rudos van y buscan pleito a otros países nada más porque sí&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">friends.setSynopsis(</span><span class="s2">&quot;Un grupo de amigos que al parecer no trabajan ni tienen hobbies se juntan a hablar de parejas&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">dark.setSynopsis(</span><span class="s2">&quot;La verdad no la entendí&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">howIMetYourMother.setSynopsis(</span><span class="s2">&quot;Lo mismo que friends pero con otras personas&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">caballerosDelZodiaco.setSynopsis(</span><span class="s2">&quot;Muchos peleadores explican lo que harán antes de cada golpe&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s1">ArrayList&lt;Media&gt; mediaList = </span><span class="s0">new </span><span class="s1">ArrayList&lt;&gt;()</span><span class="s0">;</span>
+        <span class="s1">mediaList.add(backToTheFuture)</span><span class="s0">;</span>
+        <span class="s1">mediaList.add(avengers)</span><span class="s0">;</span>
+        <span class="s1">mediaList.add(forrestGump)</span><span class="s0">;</span>
+        <span class="s1">mediaList.add(breakingBad)</span><span class="s0">;</span>
+        <span class="s1">mediaList.add(vikings)</span><span class="s0">;</span>
+        <span class="s1">mediaList.add(friends)</span><span class="s0">;</span>
+        <span class="s1">mediaList.add(dark)</span><span class="s0">;</span>
+        <span class="s1">mediaList.add(howIMetYourMother)</span><span class="s0">;</span>
+        <span class="s1">mediaList.add(caballerosDelZodiaco)</span><span class="s0">;</span>
+
+        <span class="s1">printInstructions(mediaList)</span><span class="s0">;</span>
+
+        <span class="s1">Scanner scanner = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">selection = scanner.nextInt()</span><span class="s0">;</span>
+
+        <span class="s0">while </span><span class="s1">(selection != </span><span class="s3">0</span><span class="s1">) {</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+            <span class="s0">int </span><span class="s1">mediaListSize = mediaList.size()</span><span class="s0">;</span>
+            <span class="s0">int </span><span class="s1">index = selection -</span><span class="s3">1</span><span class="s0">;</span>
+
+            <span class="s0">if </span><span class="s1">(index &gt;= mediaListSize) {</span>
+                <span class="s1">System.out.println(</span><span class="s2">&quot;Serie inválida, selecciona otra.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+            <span class="s1">Media media = mediaList.get(selection - </span><span class="s3">1</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">System.out.println(media.getSynopsis())</span><span class="s0">;</span>
+            <span class="s1">}</span>
+
+            <span class="s1">System.out.println(</span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">printInstructions(mediaList)</span><span class="s0">;</span>
+            <span class="s1">selection = scanner.nextInt()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Fin&quot;</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">private static void </span><span class="s1">printInstructions(ArrayList&lt;Media&gt; mediaList) {</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Selecciona una serie para ver su sinopsis&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s3">0</span><span class="s0">; </span><span class="s1">i &lt; mediaList.size() </span><span class="s0">; </span><span class="s1">i++) {</span>
+            <span class="s1">Media media = mediaList.get(i)</span><span class="s0">;</span>
+            <span class="s0">int </span><span class="s1">index = i + </span><span class="s3">1</span><span class="s0">;</span>
+            <span class="s1">System.out.println(index + </span><span class="s2">&quot;) - &quot; </span><span class="s1">+ media.getTitle())</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;0) - Salir&quot;</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">onMediaDownloaded(Media media</span><span class="s0">, </span><span class="s1">String content) {</span>
+        <span class="s1">media.setContent(content)</span><span class="s0">;</span>
+        <span class="s1">media.play()</span><span class="s0">;</span>
+        <span class="s1">System.out.println(content)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
